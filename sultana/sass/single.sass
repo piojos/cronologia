@@ -1,0 +1,139 @@
+article
+	.title
+		.studio
+			margin-top: 1em
+		.author
+			margin-top: 3em
+		.right
+			margin-bottom: 5em
+		.caption
+			margin-bottom: 2em
+		@media (min-width: 600px)
+			margin-top: 1em
+
+	.content
+		> div
+			margin-bottom: 1em
+		.right
+			position: relative
+			top: -0.5em
+
+	@media (max-width: 600px)
+		.left.image
+			img
+				width: 40%
+			.caption
+				width: 60%
+				float: right
+				padding-left: 2em
+
+	@media (min-width: 600px)
+		.left
+			width: 40%
+			float: left
+			clear: left
+			padding-right: 2em
+			&.large
+				width: 60%
+		.right
+			width: 60%
+			float: left
+			&.short
+				width: 40%
+	.gallery
+		img
+			width: 27%
+			margin: 0 3%
+		a
+			border: 1px solid gray
+			display: block
+			padding: 1em 0.5em 0.75em
+			text-align: center
+			cursor: pointer
+			color: gray
+			&:hover
+				opacity: 0.75
+		p
+			font-size: 0.75em
+			border-top: 1px solid lightgray
+			padding-top: 0.5em
+
+	.gallery, .biblio
+		margin-top: 2em
+
+	.title, .content, .comments, .add-comment
+		clear: both
+		overflow: auto
+
+	.caption
+		font-size: 0.75em
+		line-height: 1.5em
+		opacity: 0.8
+		margin-bottom: 2em
+
+	.comments, .add-comment
+		margin-top: 5em
+
+li.comment
+	list-style: none
+	margin: 2em 0
+
+.comment-author
+	@extend .sofia
+	text-transform: uppercase
+	display: inline-block
+	img
+		max-height: 2.5em
+		width: auto
+		border-radius: 50%
+		vertical-align: middle
+		margin-right: 0.5em
+
+.comment-meta
+	@extend .sofia
+	display: inline
+	font-size: 0.65em
+	position: relative
+	top: -0.5em
+	a
+		text-decoration: none
+		color: $black
+
+a.comment-edit-link
+	font-weight: 600
+
+ul.parent > li.comment:nth-child(1)
+	margin-top: 0
+
+ul.children li.comment
+	border-left: 1px solid lightgray
+	padding-left: 2em
+
+.comment-body p
+	margin-top: 1em
+
+a.comment-reply-link
+	@extend .button
+	@extend .boxed
+	color: $black
+	text-decoration: none
+	font-size: 0.75em
+	margin-top: 1em
+	opacity: .25
+	&:hover
+		opacity: .5
+
+.add-comment input
+	border-bottom: 1px solid lightgray
+	margin-bottom: 2em
+	&[type="submit"]
+		@extend .button
+		@extend .boxed
+		background: none
+		padding: 1em
+		width: inherit
+		margin: 1em 0
+
+.logged-in-as, .comment-notes
+	@extend .label
+	margin: 0.5em 0

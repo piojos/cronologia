@@ -6,6 +6,9 @@ $black: #3b3b37
 $blue: #2076EA
 
 
+*
+	+box-sizing(border-box)
+
 
 
 
@@ -59,13 +62,12 @@ textarea
 	background: linear-gradient( to bottom, #FFF 98%, #D9D9D9 2% )
 	background-size: 100% 1.75em
 	line-height: 1.75em
+	&:focus
+		background: linear-gradient( to bottom, #FFF 98%, #C7DFFF 2% )
+		background-size: 100% 1.75em
 
 input:focus
 	border-bottom-color: #C7DFFF
-
-textarea:focus
-	background: linear-gradient( to bottom, #FFF 98%, #C7DFFF 2% )
-	background-size: 100% 1.75em
 
 
 
@@ -92,6 +94,12 @@ img
 	line-height: 1em
 	font-weight: 600
 	-webkit-font-smoothing: antialiased
+
+.boxed
+	display: inline-block
+	padding: 0.5em 1em 0.75em
+	border: 1px solid $black
+	+border-radius(.35em)
 
 .label, label
 	@extend .sofia
