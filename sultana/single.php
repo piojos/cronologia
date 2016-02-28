@@ -65,17 +65,30 @@
 			}
 
 
-			$images = get_sub_field('gallery');
+			$images = get_field('post_gallery');
+			$i = 1; ?>
+				<div class="left gallery"><?php
 			if($images) : ?>
-				<div class="left gallery">
 					<a herf="#"><?php
 
 					foreach( $images as $image ):
 						?><img src="<?php echo $image['sizes']['thumbnail']; ?>" /><?php
+						if($i++ == 3) break;
 					endforeach; ?>
 						<p class="button">Ver todas las imagenes.</p>
 
-					</a>
+					</a><?php
+			endif; ?>
+				</div><?php
+
+
+			$biblio = get_field('biblio');
+			if($biblio) : ?>
+				<div class="right biblio">
+					<h3>Bibliografía</h3>
+					<div class="caption">
+						<?php echo $biblio; ?>
+					</div>
 				</div><?php
 			endif; ?>
 
