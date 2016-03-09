@@ -1,0 +1,159 @@
+
+
+// Single Style
+
+article
+
+	.title
+		.studio
+			margin-top: 1em
+		.author
+			margin-top: 3em
+		.right
+			margin-bottom: 5em
+		.caption
+			margin-bottom: 2em
+		@media (min-width: 600px)
+			margin-top: 1em
+
+	.content
+		> div
+			margin-bottom: 1em
+		.right
+			position: relative
+			top: -.5em
+
+	@media (max-width: 600px)
+		.left.image
+			img
+				width: 40%
+			.caption
+				width: 60%
+				float: right
+				padding-left: 2em
+	@media (min-width: 600px)
+		.left
+			width: 40%
+			float: left
+			clear: left
+			padding-right: 2em
+		.right
+			width: 60%
+			float: left
+		.left.large
+			width: 60%
+		.right.short
+			width: 40%
+
+	.gallery
+		img
+			width: 27%
+			margin: 0 3%
+		a
+			border: 1px solid gray
+			display: block
+			padding: 1em .5em .75em
+			text-align: center
+			cursor: pointer
+			color: gray
+			&:hover
+				opacity: .75
+		p
+			font-size: 0.75em
+			border-top: 1px solid lightgray
+			padding-top: .5em
+
+	.title, .content, .comments, .add-comment
+		clear: both
+		overflow: auto
+
+	.caption
+		font-size: 0.75em
+		line-height: 1.5em
+		opacity: .8
+		margin-bottom: 2em
+
+	.comments, .add-comment
+		margin-top: 5em
+
+li.comment
+	list-style: none
+	margin: 2em 0
+
+.comment-author
+	font-family: "sofia-pro"
+	text-transform: uppercase
+	display: inline-block
+	img
+		max-height: 2.5em
+		width: auto
+		border-radius: 50%
+		vertical-align: middle
+		margin-right: .5em
+
+.comment-meta
+	@extend .sofia
+	display: inline
+	font-size: .65em
+	position: relative
+	top: -.5em
+	a
+		text-decoration: none
+		color: black
+
+a.comment-edit-link
+	font-weight: 600
+
+ul.children li.comment
+	border-left: 1px solid lightgray
+	padding-left: 2em
+
+a.comment-reply-link
+	@extend .button
+	color: black
+	text-decoration: none
+	border: 1px solid
+	padding: .35em 1em .5em
+	font-size: .75em
+
+// @media (max-width:1000px) {
+//     .content .right p {
+//         font-size: 1.1em;
+//         line-height: 2em;
+//     }
+//     .content .right h2 {
+//         font-size: 1.5em;
+//         line-height: 1.5em;
+//         margin-bottom: 1em;
+//     }
+// }
+// @media (min-width:1000px) {
+//     .content .right p {
+//         font-size: 1.25em;
+//         line-height: 2em;
+//     }
+//     .content .right h2 {
+//         font-size: 2em;
+//         line-height: 1.5em;
+//         margin-bottom: 1em;
+//     }
+// }
+
+
+
+
+.add-comment input
+	border-bottom: 1px solid lightgray
+	margin-bottom: 2em
+	&[type="submit"]
+		@extend .button
+		background: none
+		border: 1px solid black
+		padding: 1em
+		width: inherit
+		+border-radius(4px)
+		margin: 1em 0
+
+.logged-in-as, .comment-notes
+	@extend .label
+	margin: .5em 0
