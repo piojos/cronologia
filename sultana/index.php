@@ -18,42 +18,46 @@ $posts = get_posts(array(
 	'posts_per_page'	=> -1,
 	'meta_key'			=> 'year',
 	'orderby'			=> 'meta_value_num',
-	'order'				=> 'DESC'
+	'order'				=> 'ASC'
 ));
 
 	if( $posts ):
 
 		foreach( $posts as $post ):
-
 			setup_postdata( $post );
 
-			$annoNuevo = get_field('year');
-			// echo $annoNuevo;
+		$annoNuevo = get_field('year');
 
 			if($anno == '') {
 				echo '<section class="year latest"><div class="number">Latest</div><ul class="projects">';
-			} elseif($annoNuevo == $anno) {
-				// echo 'Son del mismo año ('.$anno.' :: '.$annoNuevo.').';
-			} else {
+			} elseif($annoNuevo == $anno) {} else {
 				echo '</section><section class="year"><div class="number">'.$annoNuevo.'</div><ul class="projects">';
-			} ?>
-			<li>
-				<a href="<?php the_permalink(); ?>"><strong class="sofia"><?php the_field('year'); ?> 🐞 <?php
-				if($anno == '') {
-					echo 'Post más reciente ('.$anno.' :: '.$annoNuevo.'):';
-				} elseif($annoNuevo == $anno) {
-					echo 'Son del mismo año ('.$anno.' :: '.$annoNuevo.').';
-				} else {
-					echo 'Son de otro año ('.$anno.' :: '.$annoNuevo.').';
-				}
-				$anno = get_field('year'); ?> </strong> <?php the_title(); ?></a>
+			}
+
+			$cat = get_the_category(); ?>
+
+
+			<li<?php if (in_category('2')) echo ' class="article"'; ?>>
+				<a href="<?php the_permalink(); ?>" class="sofia"><?php
+
+				// Tester
+				// if($anno == '') {
+				// 	echo '<span>Nuevo</span>';
+				// } elseif($annoNuevo == $anno) {
+				// 	echo '<span>Mismo</span>';
+				// } else {
+				// 	echo '<span>Otro</span>';
+				// }
+
+				the_title(); ?></a>
 			</li><?php
+
+
+		$anno = get_field('year');
 
 			if($anno == '') {
 				echo '</ul></section>';
-			} elseif($annoNuevo == $anno) {
-				// echo 'Son del mismo año ('.$anno.' :: '.$annoNuevo.').';
-			} else {
+			} elseif($annoNuevo == $anno) {} else {
 				echo '</ul></section>';
 			}
 
