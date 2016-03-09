@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 
 
 // Single Style
 
 article
 
+=======
+article
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 	.title
 		.studio
 			margin-top: 1em
@@ -21,7 +25,11 @@ article
 			margin-bottom: 1em
 		.right
 			position: relative
+<<<<<<< HEAD
 			top: -.5em
+=======
+			top: -0.5em
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 
 	@media (max-width: 600px)
 		.left.image
@@ -31,12 +39,17 @@ article
 				width: 60%
 				float: right
 				padding-left: 2em
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 	@media (min-width: 600px)
 		.left
 			width: 40%
 			float: left
 			clear: left
 			padding-right: 2em
+<<<<<<< HEAD
 		.right
 			width: 60%
 			float: left
@@ -45,6 +58,15 @@ article
 		.right.short
 			width: 40%
 
+=======
+			&.large
+				width: 60%
+		.right
+			width: 60%
+			float: left
+			&.short
+				width: 40%
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 	.gallery
 		img
 			width: 27%
@@ -52,16 +74,31 @@ article
 		a
 			border: 1px solid gray
 			display: block
+<<<<<<< HEAD
 			padding: 1em .5em .75em
+=======
+			padding: 1em 0.5em 0.75em
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 			text-align: center
 			cursor: pointer
 			color: gray
 			&:hover
+<<<<<<< HEAD
 				opacity: .75
 		p
 			font-size: 0.75em
 			border-top: 1px solid lightgray
 			padding-top: .5em
+=======
+				opacity: 0.75
+		p
+			font-size: 0.75em
+			border-top: 1px solid lightgray
+			padding-top: 0.5em
+
+	.gallery, .biblio
+		margin-top: 2em
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 
 	.title, .content, .comments, .add-comment
 		clear: both
@@ -70,7 +107,11 @@ article
 	.caption
 		font-size: 0.75em
 		line-height: 1.5em
+<<<<<<< HEAD
 		opacity: .8
+=======
+		opacity: 0.8
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 		margin-bottom: 2em
 
 	.comments, .add-comment
@@ -81,7 +122,11 @@ li.comment
 	margin: 2em 0
 
 .comment-author
+<<<<<<< HEAD
 	font-family: "sofia-pro"
+=======
+	@extend .sofia
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 	text-transform: uppercase
 	display: inline-block
 	img
@@ -89,25 +134,45 @@ li.comment
 		width: auto
 		border-radius: 50%
 		vertical-align: middle
+<<<<<<< HEAD
 		margin-right: .5em
+=======
+		margin-right: 0.5em
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 
 .comment-meta
 	@extend .sofia
 	display: inline
+<<<<<<< HEAD
 	font-size: .65em
 	position: relative
 	top: -.5em
 	a
 		text-decoration: none
 		color: black
+=======
+	font-size: 0.65em
+	position: relative
+	top: -0.5em
+	a
+		text-decoration: none
+		color: $black
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 
 a.comment-edit-link
 	font-weight: 600
 
+<<<<<<< HEAD
+=======
+ul.parent > li.comment:nth-child(1)
+	margin-top: 0
+
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 ul.children li.comment
 	border-left: 1px solid lightgray
 	padding-left: 2em
 
+<<<<<<< HEAD
 a.comment-reply-link
 	@extend .button
 	color: black
@@ -141,19 +206,45 @@ a.comment-reply-link
 
 
 
+=======
+.comment-body p
+	margin-top: 1em
+
+a.comment-reply-link
+	@extend .button
+	@extend .boxed
+	color: $black
+	text-decoration: none
+	font-size: 0.75em
+	margin-top: 1em
+	opacity: .25
+	&:hover
+		opacity: .5
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 
 .add-comment input
 	border-bottom: 1px solid lightgray
 	margin-bottom: 2em
 	&[type="submit"]
 		@extend .button
+<<<<<<< HEAD
 		background: none
 		border: 1px solid black
 		padding: 1em
 		width: inherit
 		+border-radius(4px)
+=======
+		@extend .boxed
+		background: none
+		padding: 1em
+		width: inherit
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 		margin: 1em 0
 
 .logged-in-as, .comment-notes
 	@extend .label
+<<<<<<< HEAD
 	margin: .5em 0
+=======
+	margin: 0.5em 0
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1

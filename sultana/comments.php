@@ -11,11 +11,11 @@ if ( post_password_required() ) {
 } ?>
 
 <div class="comments">
-	 <div class="left">
+	 <div class="left" style="margin-top: 1em">
 		 <h3>Comentarios</h3>
-		 <p>Todos los comentarios son moderados para servir como una aportación relevante al
+		 <p class="caption">Todos los comentarios son moderados para servir como una aportación relevante al
 			 proyecto o la historia al rededor del mismo.</p><?php
-			if ( have_comments() ) : ?><br>
+			if ( have_comments() ) : ?>
 			<p class="label"><?php
 				printf( _nx( 'Un comentario.', '%1$s comentarios.', get_comments_number(), 'Comentarios'),
 					number_format_i18n( get_comments_number() ), get_the_title() ); ?>
@@ -29,10 +29,12 @@ if ( post_password_required() ) {
 
 	<div class="right"><?php
 		if ( have_comments() ) :
+			echo '<ul class="parent">';
 			wp_list_comments( array(
 				'short_ping'  => true,
 				'avatar_size' => 50,
 			) );
+			echo '</ul>';
 		else :
 			echo '<div class="six columns offset-by-one">No hay comentarios.</div>';
 		endif; ?>

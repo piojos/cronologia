@@ -45,10 +45,19 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 .kepler, body, input, textarea {
   font-family: "kepler-std-subhead", serif; }
 
+<<<<<<< HEAD
 .sofia, h1, h2, h3, .button, a.comment-reply-link, .add-comment input[type="submit"], .label, .logged-in-as, .comment-notes, label, .comment-meta {
+=======
+.sofia, h1, h2, h3, .button, a.comment-reply-link, .add-comment input[type="submit"], .label, .logged-in-as, .comment-notes, label, .comment-author, .comment-meta {
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
   font-family: "sofia-pro", sans-serif; }
 
 body {
@@ -85,13 +94,12 @@ textarea {
   background: linear-gradient(to bottom, #ffffff 98%, #d9d9d9 2%);
   background-size: 100% 1.75em;
   line-height: 1.75em; }
+  textarea:focus {
+    background: linear-gradient(to bottom, #ffffff 98%, #c7dfff 2%);
+    background-size: 100% 1.75em; }
 
 input:focus {
   border-bottom-color: #C7DFFF; }
-
-textarea:focus {
-  background: linear-gradient(to bottom, #ffffff 98%, #c7dfff 2%);
-  background-size: 100% 1.75em; }
 
 .contain {
   max-width: 50em;
@@ -112,11 +120,23 @@ img {
   font-weight: 600;
   -webkit-font-smoothing: antialiased; }
 
+<<<<<<< HEAD
+=======
+.boxed, a.comment-reply-link, .add-comment input[type="submit"] {
+  display: inline-block;
+  padding: 0.5em 1em 0.75em;
+  border: 1px solid #3b3b37;
+  -moz-border-radius: 0.35em;
+  -webkit-border-radius: 0.35em;
+  border-radius: 0.35em; }
+
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 .label, .logged-in-as, .comment-notes, label {
   font-size: 0.75em;
   text-transform: uppercase;
   line-height: 1.5em; }
 
+<<<<<<< HEAD
 section.year {
   border-top: 1px solid #e8e8e8;
   clear: both; }
@@ -147,6 +167,8 @@ section.year {
       text-decoration: none;
       color: #3b3b37; }
 
+=======
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 article .title .studio {
   margin-top: 1em; }
 article .title .author {
@@ -176,6 +198,7 @@ article .content .right {
     float: left;
     clear: left;
     padding-right: 2em; }
+<<<<<<< HEAD
   article .right {
     width: 60%;
     float: left; }
@@ -183,6 +206,15 @@ article .content .right {
     width: 60%; }
   article .right.short {
     width: 40%; } }
+=======
+    article .left.large {
+      width: 60%; }
+  article .right {
+    width: 60%;
+    float: left; }
+    article .right.short {
+      width: 40%; } }
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 article .gallery img {
   width: 27%;
   margin: 0 3%; }
@@ -199,6 +231,11 @@ article .gallery p {
   font-size: 0.75em;
   border-top: 1px solid lightgray;
   padding-top: 0.5em; }
+<<<<<<< HEAD
+=======
+article .gallery, article .biblio {
+  margin-top: 2em; }
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 article .title, article .content, article .comments, article .add-comment {
   clear: both;
   overflow: auto; }
@@ -215,7 +252,10 @@ li.comment {
   margin: 2em 0; }
 
 .comment-author {
+<<<<<<< HEAD
   font-family: "sofia-pro";
+=======
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
   text-transform: uppercase;
   display: inline-block; }
   .comment-author img {
@@ -232,33 +272,62 @@ li.comment {
   top: -0.5em; }
   .comment-meta a {
     text-decoration: none;
+<<<<<<< HEAD
     color: black; }
+=======
+    color: #3b3b37; }
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 
 a.comment-edit-link {
   font-weight: 600; }
 
+<<<<<<< HEAD
+=======
+ul.parent > li.comment:nth-child(1) {
+  margin-top: 0; }
+
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 ul.children li.comment {
   border-left: 1px solid lightgray;
   padding-left: 2em; }
 
+<<<<<<< HEAD
 a.comment-reply-link {
   color: black;
   text-decoration: none;
   border: 1px solid;
   padding: 0.35em 1em 0.5em;
   font-size: 0.75em; }
+=======
+.comment-body p {
+  margin-top: 1em; }
+
+a.comment-reply-link {
+  color: #3b3b37;
+  text-decoration: none;
+  font-size: 0.75em;
+  margin-top: 1em;
+  opacity: 0.25; }
+  a.comment-reply-link:hover {
+    opacity: 0.5; }
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
 
 .add-comment input {
   border-bottom: 1px solid lightgray;
   margin-bottom: 2em; }
   .add-comment input[type="submit"] {
     background: none;
+<<<<<<< HEAD
     border: 1px solid black;
     padding: 1em;
     width: inherit;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
+=======
+    padding: 1em;
+    width: inherit;
+>>>>>>> 0107541ae05a0645b7277ab0e919e7f460c6f4b1
     margin: 1em 0; }
 
 .logged-in-as, .comment-notes {
