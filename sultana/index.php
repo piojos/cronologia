@@ -4,72 +4,64 @@
 	 *	Index
 	 */
 
-	get_header(); /*
-	if(have_posts()) :
-	echo '<ul>';
-		while(have_posts()) : the_post(); ?>
-			<li><a href="<?php the_permalink(); ?>"><strong class="sofia"><?php the_field('year'); ?></strong> <?php the_title(); ?></a></li><?php
-		endwhile;
-	echo '</ul>';
-endif; */
-
-// get posts
-$posts = get_posts(array(
-	'posts_per_page'	=> -1,
-	'meta_key'			=> 'year',
-	'orderby'			=> 'meta_value_num',
-	'order'				=> 'ASC'
-));
-
-	if( $posts ):
-
-		foreach( $posts as $post ):
-			setup_postdata( $post );
-
-		$annoNuevo = get_field('year');
-
-			if($anno == '') { // Post más reciente.
-				if (in_category('2')) { // Es Artículo
-					echo '<section class="year latest"><div class="number">Artículo</div><ul class="projects">';
-				} else { // Es Post
-					echo '<section class="year latest"><div class="number">Nuevo</div><ul class="projects">';
-				}
-				// echo '<section class="year latest"><div class="number">Latest</div><ul class="projects">';
-			} elseif($annoNuevo == $anno) {} else {
-				echo '</section><section class="year"><div class="number">'.$annoNuevo.'</div><ul class="projects">';
-			}
-
-			$cat = get_the_category(); ?>
+	get_header(); ?>
 
 
-			<li<?php if (in_category('2')) echo ' class="article"'; ?>>
-				<a href="<?php the_permalink(); ?>" class="sofia"><?php
-
-				echo $annoNuevo.': ';
-				// Tester
-				// if($anno == '') {
-				// 	echo '<span>Nuevo</span>';
-				// } elseif($annoNuevo == $anno) {
-				// 	echo '<span>Mismo</span>';
-				// } else {
-				// 	echo '<span>Otro</span>';
-				// }
-
-				the_title(); ?></a>
-			</li><?php
-
-
-		$anno = get_field('year');
-
-			if($anno == '') {
-				echo '</ul></section>';
-			} elseif($annoNuevo == $anno) {} else {
-				echo '</ul></section>';
-			}
-
-		endforeach;
-		wp_reset_postdata();
-
-	endif;
+	<section class="year latest">
+		<div class="number">Nuevo</div>
+		<ul class="projects">
+			<li>
+				<a href="http://cronologia.mx/los-pioneros/" class="sofia">
+					1900: Los Pioneros
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="year">
+		<div class="number">1988</div>
+		<ul class="projects">
+			<li>
+				<a href="http://cronologia.mx/escribiendo-a-cerca-de-los-pulpos/" class="sofia">
+					1988: Escribiendo a cerca de los pulpos
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="year">
+		<div class="number">1996</div>
+		<ul class="projects">
+			<li>
+				<a href="http://cronologia.mx/chuntaros-radio-poder/" class="sofia">1996: Chúntaros Radio Poder</a>
+			</li>
+			<li>
+				<a href="http://cronologia.mx/grammys-96/" class="sofia">1996: Grammys 96</a>
+			</li>
+		</ul>
+	</section>
+	<section class="year">
+		<div class="number">2001</div>
+		<ul class="projects">
+			<li>
+				<a href="http://cronologia.mx/kinky/" class="sofia">2001: Kinky</a>
+			</li>
+			<li>
+				<a href="http://cronologia.mx/post-mas-nuevisimo/" class="sofia">2015: Post más nuevísimo</a>
+			</li>
+		</ul>
+	</section>
+	<section class="year">
+		<div class="number">2010</div>
+		<ul class="projects">
+			<li class="article">
+				<a href="http://cronologia.mx/las-orquestas-y-el-jazz/" class="sofia">2010: Las Orquestas y el Jazz</a>
+			</li>
+			<li>
+				<a href="http://cronologia.mx/mitosis-010/" class="sofia">2010: Mitosis 010</a>
+			</li>
+			<li class="article">
+				<a href="http://cronologia.mx/el-manifiesto-supermodernista/" class="sofia">2010: Supermodernismo</a>
+			</li>
+		</ul>
+	</section><?php
 
 	get_footer(); ?>
