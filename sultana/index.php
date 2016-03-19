@@ -6,6 +6,9 @@
 
 	get_header(); ?>
 
+	<div>
+		<h1>Cronología de Diseño Gráfico en Monterrey</h1>
+	</div>
 
 	<section class="year latest">
 		<div class="number">Nuevo</div>
