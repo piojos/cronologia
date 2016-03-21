@@ -1,0 +1,45 @@
+.contain
+	max-width: 50em
+	padding: 2em
+	margin-right: auto
+	margin-left: auto
+	overflow: auto
+	@media (max-width: 450px)
+		padding: 1em
+	@media (max-width: 600px)
+		.slim.image
+			img
+				width: 40%
+			.caption
+				width: 60%
+				float: right
+				padding-left: 2em
+			a.no_caption img
+				width: 100%
+			ul > li
+				overflow: auto
+
+	@media (min-width: 600px)
+		.slim
+			width: 40%
+		.wide
+			width: 60%
+
+		.left
+			float: left
+			// clear: left
+			padding-right: 2em
+		.right
+			// width: 60%
+			float: left
+		// .left.large
+			// width: 60%
+		// .right.short
+			// width: 40%
+			// &.large
+				// width: 60%
+		.right
+			// width: 60%
+			float: left
+			// &.short
+				// width: 40%

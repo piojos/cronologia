@@ -21,9 +21,9 @@
 		<div class="title"><?php
 
 			$ftdCaption = get_post(get_post_thumbnail_id())->post_excerpt;
-			echo '<div class="left caption"><p>'.$ftdCaption.'</p></div>'; ?>
+			echo '<div class="left caption slim"><p>'.$ftdCaption.'</p></div>'; ?>
 
-			<div class="right">
+			<div class="right wide">
 				<h1><?php the_title(); ?></h1>
 				<?php if($creator) echo '<p class="studio sofia">'.$creator.'</p>'; ?>
 				<p class="author">Contenido por <?php the_author_posts_link(); ?> el <?php the_time('l j \d\e F \d\e Y'); ?>.</p>
@@ -34,7 +34,7 @@
 
 		<div class="content"><?php
 
-			if($month OR $year) echo '<div class="left project_date sofia"><p>';
+			if($month OR $year) echo '<div class="left project_date sofia slim"><p>';
 			if($month) echo $month;
 			if($year) echo ' <strong>'.$year.'</strong>';
 			if($month OR $year) echo '</p></div>';
@@ -43,23 +43,27 @@
 			while (have_rows('content_blocks')) {
 				the_row();
 
-				$images = get_sub_field('images');
-				if($images) : ?>
-					<div class="left image"><?php
+				$images = get_sub_field('images'); ?>
+				<div class="left <?php if($images) echo 'image '; ?>slim"><?php
+					if($images) : ?>
 
+						<ul><?php
 						foreach( $images as $image ): ?>
-						<a herf="<?php echo $image['url']; ?>" target="_blank">
-							<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>">
-						</a>
-							<?php if($image['caption']) echo '<p class="caption">'.$image['caption'].'</p>'; ?>
+							<li>
+								<a herf="<?php echo $image['url']; ?>" target="_blank" <?php if(!$image['caption']) echo ' class="no_caption"'; ?>>
+									<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>">
+								</a>
+								<?php if($image['caption']) echo '
+								<p class="caption">'.$image['caption'].'</p>'; ?>
+							</li>
 						<?php
 						endforeach; ?>
+					</ul><?php
 
-					</div><?php
-				endif; ?>
+					endif; ?>
+				</div>
 
-
-				<div class="right">
+				<div class="right wide">
 					<?php the_sub_field('content'); ?>
 				</div><?php
 			}
@@ -67,7 +71,7 @@
 
 			$images = get_field('post_gallery');
 			$i = 1; ?>
-				<div class="left gallery"><?php
+				<div class="left gallery slim"><?php
 			if($images) : ?>
 					<a herf="#"><?php
 
@@ -84,7 +88,7 @@
 
 			$biblio = get_field('biblio');
 			if($biblio) : ?>
-				<div class="right biblio">
+				<div class="right biblio wide">
 					<h3>Bibliografía</h3>
 					<div class="caption">
 						<?php echo $biblio; ?>

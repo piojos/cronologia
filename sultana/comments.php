@@ -11,7 +11,7 @@ if ( post_password_required() ) {
 } ?>
 
 <div class="comments">
-	 <div class="left" style="margin-top: 1em">
+	 <div class="slim left" style="margin-top: 1em">
 		 <h3>Comentarios</h3>
 		 <p class="caption">Todos los comentarios son moderados para servir como una aportación relevante al
 			 proyecto o la historia al rededor del mismo.</p><?php
@@ -27,7 +27,7 @@ if ( post_password_required() ) {
 			endif; ?>
 	</div>
 
-	<div class="right"><?php
+	<div class="wide right"><?php
 		if ( have_comments() ) :
 			echo '<ul class="parent">';
 			wp_list_comments( array(
@@ -44,17 +44,17 @@ if ( post_password_required() ) {
 
 <div class="add-comment">
 	<form>
-		<div class="left large"><?php
+		<div class="wide left"><?php
 			comment_form();
 
 			if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-			<div class="six columns offset-by-one">
+			<div class="">
 				<?php _e( 'Commentarios desactivados.' ); ?>
 			</div><?php
 
 			endif; ?>
 		</div>
-		<div class="right short">
+		<div class="slim right">
 			<p>¿Tienes imagenes relevantes para el proyecto?</p>
 			<p>
 				Envíalas vía <a href="http://wetransfer.nl/" target="_blank">wetransfer.nl</a> o
