@@ -1,3 +1,37 @@
+
+// Others
+
+
+section
+	position: relative
+
+img
+	max-width: 100%
+	height: auto
+
+.button
+	@extend .sofia
+	text-transform: uppercase
+	line-height: 1em
+	font-weight: 600
+	-webkit-font-smoothing: antialiased
+
+.boxed
+	display: inline-block
+	padding: 0.5em 1em 0.75em
+	border: 1px solid $black
+	+border-radius(.35em)
+
+.label, label
+	@extend .sofia
+	font-size: .75em
+	text-transform: uppercase
+	line-height: 1.5em
+
+
+
+
+
 .contain
 	max-width: 50em
 	padding: 2em
@@ -25,21 +59,7 @@
 		.wide
 			width: 60%
 
+		.left, .right
+			float: left
 		.left
-			float: left
-			// clear: left
 			padding-right: 2em
-		.right
-			// width: 60%
-			float: left
-		// .left.large
-			// width: 60%
-		// .right.short
-			// width: 40%
-			// &.large
-				// width: 60%
-		.right
-			// width: 60%
-			float: left
-			// &.short
-				// width: 40%

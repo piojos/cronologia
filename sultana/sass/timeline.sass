@@ -29,31 +29,32 @@ h1.logo
 
 
 
-#mainTitle
+#mainTitle, #prologue
 	padding-top: 10em
 	padding-bottom: 10em
-	position: relative
 
 
 .detailLine
-	+absolute($bo: 0, $le: 10em)
-	background: linear-gradient($black, $beige)
+	+absolute($bo: 0, $le: 3em)
+	background: white
 	width: 1px
-	height: 10em
-	&.top:before
-		content: ''
-		display: block
-		width: 9px
-		height: 9px
-		background: $black
-		+border-radius(50%)
-		+absolute($to: -77px, $le: -4px)
+	height: 100%
+	&.top
+		+background-image(linear-gradient($black, $beige))
+		height: 21em
+		&:before
+			content: ''
+			display: block
+			width: 9px
+			height: 9px
+			background: $black
+			+border-radius(50%)
+			+absolute($to: -9px, $le: -4px)
 
 
 
 #prologue
 	background: $beige
-	padding-top: 10em
 
 
 
