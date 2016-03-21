@@ -4,6 +4,7 @@
 
 $black: #3b3b37
 $blue: #2076EA
+$beige: #fbf5ea
 
 
 *
@@ -55,14 +56,16 @@ body
 	line-height: 2em
 	color: $black
 
-h1, h2, h3
+article h1, h2, h3
 	@extend .sofia
-	font-size: 1.25em
 	font-style: normal
 	font-weight: 900
 
 h1
 	font-size: 2em
+
+h2, h3
+	font-size: 1.25em
 
 a
 	color: $blue
@@ -103,13 +106,6 @@ input:focus
 
 // Others
 
-.contain
-	max-width: 50em
-	padding: 2em
-	margin-right: auto
-	margin-left: auto
-	@media (max-width: 450px)
-		padding: 1em
 
 img
 	max-width: 100%
