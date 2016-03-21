@@ -40,32 +40,32 @@
 		<div class="detailLine"></div>
 
 		<div class="contain">
+			<div class="smallLogo">
+				O I O
+			</div>
 			<div class="slim left sofia">
 				1902 – 2015
 			</div>
-			<div class="wide right">
+			<div class="wide right sofia" style="margin-bottom:6em">
 				I. <strong>Prólogo</strong>
 			</div>
 
-			<div class="slim left image">
-				<a herf="http://cronologia.mx/wp-content/uploads/2015/11/Screen-Shot-2015-06-05-at-10.20.43.png" target="_blank">
-					<img src="http://cronologia.mx/wp-content/uploads/2015/11/Screen-Shot-2015-06-05-at-10.20.43-300x169.png" alt="pulpo rosa en fondo azul">
-				</a>
-				<p class="caption">Se me hace importante destacar que nada hacia el noroeste.</p>
+			<article>
+				<div class="slim left image">
+					<a herf="http://cronologia.mx/wp-content/uploads/2015/11/Screen-Shot-2015-06-05-at-10.20.43.png" target="_blank">
+						<img src="http://cronologia.mx/wp-content/uploads/2015/11/Screen-Shot-2015-06-05-at-10.20.43-300x169.png" alt="pulpo rosa en fondo azul">
+					</a>
+					<p class="caption">Se me hace importante destacar que nada hacia el noroeste.</p>
+				</div>
 
-				<a herf="http://cronologia.mx/wp-content/uploads/2015/11/Screen-Shot-2015-06-05-at-10.18.38.png" target="_blank">
-					<img src="http://cronologia.mx/wp-content/uploads/2015/11/Screen-Shot-2015-06-05-at-10.18.38-300x169.png" alt="">
-				</a>
-				<p class="caption">Aquí anda viendo la chiquía.</p>
-			</div>
+				<div class="wide right">
+					<h2>Antigua Gráfica</h2>
 
-			<div class="wide right">
-				<h2>Antigua Gráfica</h2>
+					<p>Steven Heller es uno de los mejores escritores dedicados al diseño gráfico que conozco, su aportación al conocimiento general que rodea la gráfica global es incomparable y punto de referencia para millones de diseñadores, incluyéndome.</p>
 
-				<p>Steven Heller es uno de los mejores escritores dedicados al diseño gráfico que conozco, su aportación al conocimiento general que rodea la gráfica global es incomparable y punto de referencia para millones de diseñadores, incluyéndome.</p>
-
-				<p>Todos los días envía un newsletter de parte de su sección especial de Print Magazine que se llama <a href="http://www.printmag.com/daily-heller/" target="_blank">‘The Daily Heller’</a> de la cual se tienen que inscribir en este momento si les interesa saber más sobre las raíces históricas del diseño gráfico mundial.</p>
-			</div>
+					<p>Todos los días envía un newsletter de parte de su sección especial de Print Magazine que se llama <a href="http://www.printmag.com/daily-heller/" target="_blank">‘The Daily Heller’</a> de la cual se tienen que inscribir en este momento si les interesa saber más sobre las raíces históricas del diseño gráfico mundial.</p>
+				</div>
+			</article>
 		</div>
 
 	</section>
