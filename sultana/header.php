@@ -10,9 +10,12 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		<!-- Place favicon.ico in the root directory -->
 
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/main.css">
-		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="https://use.typekit.net/ifl2ree.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/normalize.css">
+		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+		<script src="<?php bloginfo('template_url'); ?>/js/modernizr-2.8.3.min.js"></script>
 
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 

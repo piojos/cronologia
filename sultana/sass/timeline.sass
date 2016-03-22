@@ -1,40 +1,4 @@
 
-h1.logo
-	width: 6em
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
-	span
-		display: block
-		font-size: .5em
-		+relative($le: -2.5em, $to: .55em)
-		line-height: 0
-		text-align: right
-		width: 2em
-	@media(max-width: 600px)
-		+relative($le:.75em)
-		margin-left: auto
-		margin-right: auto
-
-
-.smallLogo
-	+absolute($to: -.825em)
-	@extend .sofia
-	font-weight: 600
-	letter-spacing: 2px
-	font-size: 1.25em
-
-
-#timelineAbout
-	margin-top: 2.25em
-	@media (max-width: 768px) and (min-width:500px)
-		width: 60%
-	@media (max-width: 600px)
-		margin-left: auto
-		margin-right: auto
-
-
-
-
 #mainTitle, #prologue
 	padding-top: 10em
 	padding-bottom: 10em
@@ -58,33 +22,152 @@ h1.logo
 			+absolute($to: -9px, $le: -4px)
 
 
+h1.logo
+	width: 6em
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	span
+		display: block
+		font-size: .5em
+		+relative($le: -2.5em, $to: .55em)
+		line-height: 0
+		text-align: right
+		width: 2em
+	@media(max-width: 600px)
+		+relative($le:.75em)
+		margin-left: auto
+		margin-right: auto
+
+
+#timelineAbout
+	margin-top: 2.25em
+	@media (max-width: 768px) and (min-width:500px)
+		width: 60%
+	@media (max-width: 600px)
+		margin-left: auto
+		margin-right: auto
+
+
+
+
+
+
 
 #prologue
 	background: $beige
 
 
+.smallLogo
+	+absolute($to: -.825em)
+	@extend .sofia
+	font-weight: 600
+	letter-spacing: 2px
+	font-size: 1.25em
+
+
+
+
+
+
+
+
+
+.newPostLine
+	background: url('../img/newPost.svg') no-repeat
+	background-position: top left
+	+absolute($to: 0, $le: 3em)
+	@extend .sofia
+	width: 4.5em
+	text-align: center
+	text-transform: uppercase
+	font-weight: 600
+	padding-top: 5.05em
+	height: 320px
+	span
+		font-size: 0.75em
+
+
+#latestPost
+	padding: 3em
+	overflow: hidden
+	.contain
+		background: #F3F6FB
+		margin-left: 8em
+		padding: 1.75em 2em 2em
+		border-left: 1px solid $blue
+		a
+			text-decoration: none
+		h3
+			font-size: 2em
+			font-weight: 100
+
+
+
+
+
+#timeline
+	.period
+		background: $black
+		width: 3.05em
+		color: white
+		border-right: 1px solid white
+		float: left
+		+relative()
+		text-align: center
+		span
+			font-size: .85em
+		.close
+			+absolute($le:0, $bo:-1.35em)
+			font-size: 2em
+			width: 1.525em
+		&.range
+			padding: 1em 0
+			max-height: 8em
+	hr
+		+absolute($zi: -1)
+
+
+
+
+
+#newChapter
+	overflow: auto
+	.title
+		background: $black
+		color: white
+		float: left
+		width: 85%
+		.contain
+			margin-left: 0
+	h2
+		font-size: 2em
+	article
+		margin-top: 8em
+		p
+			-webkit-font-smoothing: antialiased
+			-moz-osx-font-smoothing: grayscale
+	a
+		color: adjust-lightness($blue, 25%)
+		// color: #A5C3EA
+	p
+		opacity: .8
+
+
 
 
 section.year
-	border-top: 1px solid #e8e8e8
 	clear: both
+	margin-top: 1px
+	position: relative
+	overflow: auto
 
-	.number
-		background: $black
-		width: 3em
-		color: white
-		border-top: 1px solid $black
-		float: left
-		+relative($to:-1px)
-		text-align: center
-		font-size: .85em
-
-	ul.projects
-		width: 80%
+	.contentContainer
+		width: 85%
 		float: left
 		border-top: 1px solid $black
-		+relative($to:-1px)
-		padding-left: 1em
+
+	.projects
+		padding-left: 2em
 		padding-top: 1em
 		margin-bottom: 2em
 		li
@@ -94,3 +177,62 @@ section.year
 		a
 			text-decoration: none
 			color: $black
+
+	a.comments
+		@extend .sofia
+		+border-radius(1.5em)
+		font-size: .325em
+		line-height: 1em
+		background: $black
+		color: white !important
+		min-width: 1.5em
+		display: inline-block
+		height: 1.5em
+		text-align: center
+		padding: .25em .5em 0
+		vertical-align: top
+		&.no
+			background: none
+			border: 1px inset $black
+			color: black !important
+			position: relative
+			width: 1.5em
+			&:before
+				content: ''
+				+absolute($le: 0, $to: 0.6em)
+				display: block
+				width: 100%
+				height: 1px
+				background: $black
+				+rotate(-45deg)
+
+
+
+
+
+
+
+
+ul.articles li
+	background: adjust-lightness($black, 70%)
+	padding: 0 1em
+	margin-left: 2em
+	margin-bottom: 1px
+	max-height: 2em
+	position: relative
+	a
+		color: $black
+		text-decoration: none
+		white-space: nowrap
+		em
+			font-size: .85em
+			margin-left: 1em
+	&:before
+		content: ''
+		display: block
+		+absolute($le: -2em)
+		width: 2em
+		height: 2em
+		background-image: url('../img/articleIcon.svg')
+		background-position: center
+		background-repeat: no-repeat

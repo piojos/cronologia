@@ -53,13 +53,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .kepler, body, input, textarea {
   font-family: "kepler-std-subhead", serif; }
 
-.sofia, article h1, h2, h3, .button, a.comment-reply-link, .add-comment input[type="submit"], .label, .logged-in-as, .comment-notes, label, .smallLogo, .comment-author, .comment-meta {
+.sofia, article h1, h2, h3, .button, a.comment-reply-link, .add-comment input[type="submit"], .label, .logged-in-as, .comment-notes, label, .smallLogo, .newPostLine, section.year a.comments, .comment-author, .comment-meta {
   font-family: "sofia-pro", sans-serif; }
 
 body {
   font-size: 18px;
   line-height: 2em;
-  color: #3b3b37; }
+  color: #3B3B37; }
 
 article h1, h2, h3 {
   font-style: normal;
@@ -78,6 +78,15 @@ a {
 
 strong {
   font-weight: 600; }
+
+hr {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 0;
+  width: 100%; }
+
+em {
+  font-style: italic; }
 
 *:focus {
   outline: none; }
@@ -99,6 +108,11 @@ textarea {
 input:focus {
   border-bottom-color: #C7DFFF; }
 
+button {
+  background: none;
+  color: #3B3B37;
+  border: none; }
+
 section {
   position: relative; }
 
@@ -115,7 +129,7 @@ img {
 .boxed, a.comment-reply-link, .add-comment input[type="submit"] {
   display: inline-block;
   padding: 0.5em 1em 0.75em;
-  border: 1px solid #3b3b37;
+  border: 1px solid #3B3B37;
   -moz-border-radius: 0.35em;
   -webkit-border-radius: 0.35em;
   border-radius: 0.35em; }
@@ -155,42 +169,6 @@ img {
     .contain .left {
       padding-right: 2em; } }
 
-h1.logo {
-  width: 6em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  h1.logo span {
-    display: block;
-    font-size: 0.5em;
-    position: relative;
-    top: 0.55em;
-    left: -2.5em;
-    line-height: 0;
-    text-align: right;
-    width: 2em; }
-@media(max-width: 600px) {
-  h1.logo {
-    position: relative;
-    left: 0.75em;
-    margin-left: auto;
-    margin-right: auto; } }
-.smallLogo {
-  position: absolute;
-  top: -0.825em;
-  font-weight: 600;
-  letter-spacing: 2px;
-  font-size: 1.25em; }
-
-#timelineAbout {
-  margin-top: 2.25em; }
-  @media (max-width: 768px) and (min-width: 500px) {
-    #timelineAbout {
-      width: 60%; } }
-  @media (max-width: 600px) {
-    #timelineAbout {
-      margin-left: auto;
-      margin-right: auto; } }
-
 #mainTitle, #prologue {
   padding-top: 10em;
   padding-bottom: 10em; }
@@ -215,7 +193,7 @@ h1.logo {
       display: block;
       width: 9px;
       height: 9px;
-      background: #3b3b37;
+      background: #3B3B37;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
       border-radius: 50%;
@@ -223,38 +201,196 @@ h1.logo {
       top: -9px;
       left: -4px; }
 
+h1.logo {
+  width: 6em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  h1.logo span {
+    display: block;
+    font-size: 0.5em;
+    position: relative;
+    top: 0.55em;
+    left: -2.5em;
+    line-height: 0;
+    text-align: right;
+    width: 2em; }
+@media(max-width: 600px) {
+  h1.logo {
+    position: relative;
+    left: 0.75em;
+    margin-left: auto;
+    margin-right: auto; } }
+#timelineAbout {
+  margin-top: 2.25em; }
+  @media (max-width: 768px) and (min-width: 500px) {
+    #timelineAbout {
+      width: 60%; } }
+  @media (max-width: 600px) {
+    #timelineAbout {
+      margin-left: auto;
+      margin-right: auto; } }
+
 #prologue {
-  background: #fbf5ea; }
+  background: #FBF5EA; }
+
+.smallLogo {
+  position: absolute;
+  top: -0.825em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 1.25em; }
+
+.newPostLine {
+  background: url("../img/newPost.svg") no-repeat;
+  background-position: top left;
+  position: absolute;
+  top: 0;
+  left: 3em;
+  width: 4.5em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-top: 5.05em;
+  height: 320px; }
+  .newPostLine span {
+    font-size: 0.75em; }
+
+#latestPost {
+  padding: 3em;
+  overflow: hidden; }
+  #latestPost .contain {
+    background: #F3F6FB;
+    margin-left: 8em;
+    padding: 1.75em 2em 2em;
+    border-left: 1px solid #2076EA; }
+    #latestPost .contain a {
+      text-decoration: none; }
+    #latestPost .contain h3 {
+      font-size: 2em;
+      font-weight: 100; }
+
+#timeline .period {
+  background: #3B3B37;
+  width: 3.05em;
+  color: white;
+  border-right: 1px solid white;
+  float: left;
+  position: relative;
+  text-align: center; }
+  #timeline .period span {
+    font-size: 0.85em; }
+  #timeline .period .close {
+    position: absolute;
+    bottom: -1.35em;
+    left: 0;
+    font-size: 2em;
+    width: 1.525em; }
+  #timeline .period.range {
+    padding: 1em 0;
+    max-height: 8em; }
+#timeline hr {
+  position: absolute;
+  z-index: -1; }
+
+#newChapter {
+  overflow: auto; }
+  #newChapter .title {
+    background: #3B3B37;
+    color: white;
+    float: left;
+    width: 85%; }
+    #newChapter .title .contain {
+      margin-left: 0; }
+  #newChapter h2 {
+    font-size: 2em; }
+  #newChapter article {
+    margin-top: 8em; }
+    #newChapter article p {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+  #newChapter a {
+    color: #95bef5; }
+  #newChapter p {
+    opacity: 0.8; }
 
 section.year {
-  border-top: 1px solid #e8e8e8;
-  clear: both; }
-  section.year .number {
-    background: #3b3b37;
-    width: 3em;
-    color: white;
-    border-top: 1px solid #3b3b37;
+  clear: both;
+  margin-top: 1px;
+  position: relative;
+  overflow: auto; }
+  section.year .contentContainer {
+    width: 85%;
     float: left;
-    position: relative;
-    top: -1px;
-    text-align: center;
-    font-size: 0.85em; }
-  section.year ul.projects {
-    width: 80%;
-    float: left;
-    border-top: 1px solid #3b3b37;
-    position: relative;
-    top: -1px;
-    padding-left: 1em;
+    border-top: 1px solid #3B3B37; }
+  section.year .projects {
+    padding-left: 2em;
     padding-top: 1em;
     margin-bottom: 2em; }
-    section.year ul.projects li {
+    section.year .projects li {
       display: inline;
       margin-right: 0.5em;
       font-size: 2em; }
-    section.year ul.projects a {
+    section.year .projects a {
       text-decoration: none;
-      color: #3b3b37; }
+      color: #3B3B37; }
+  section.year a.comments {
+    -moz-border-radius: 1.5em;
+    -webkit-border-radius: 1.5em;
+    border-radius: 1.5em;
+    font-size: 0.325em;
+    line-height: 1em;
+    background: #3B3B37;
+    color: white !important;
+    min-width: 1.5em;
+    display: inline-block;
+    height: 1.5em;
+    text-align: center;
+    padding: 0.25em 0.5em 0;
+    vertical-align: top; }
+    section.year a.comments.no {
+      background: none;
+      border: 1px inset #3B3B37;
+      color: black !important;
+      position: relative;
+      width: 1.5em; }
+      section.year a.comments.no:before {
+        content: "";
+        position: absolute;
+        top: 0.6em;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #3B3B37;
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg); }
+
+ul.articles li {
+  background: #ececeb;
+  padding: 0 1em;
+  margin-left: 2em;
+  margin-bottom: 1px;
+  max-height: 2em;
+  position: relative; }
+  ul.articles li a {
+    color: #3B3B37;
+    text-decoration: none;
+    white-space: nowrap; }
+    ul.articles li a em {
+      font-size: 0.85em;
+      margin-left: 1em; }
+  ul.articles li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -2em;
+    width: 2em;
+    height: 2em;
+    background-image: url("../img/articleIcon.svg");
+    background-position: center;
+    background-repeat: no-repeat; }
 
 article .title .studio {
   margin-top: 1em; }
@@ -327,7 +463,7 @@ li.comment {
   top: -0.5em; }
   .comment-meta a {
     text-decoration: none;
-    color: #3b3b37; }
+    color: #3B3B37; }
 
 a.comment-edit-link {
   font-weight: 600; }
@@ -350,7 +486,7 @@ a.comment-reply-link {
   margin-top: 1em; }
 
 a.comment-reply-link {
-  color: #3b3b37;
+  color: #3B3B37;
   text-decoration: none;
   font-size: 0.75em;
   margin-top: 1em;
