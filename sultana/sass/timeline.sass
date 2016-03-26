@@ -21,6 +21,11 @@
 			+border-radius(50%)
 			+absolute($to: -9px, $le: -4px)
 
+	@media (max-width: 450px)
+		display: none
+
+
+
 
 h1.logo
 	width: 6em
@@ -85,6 +90,9 @@ h1.logo
 	height: 320px
 	span
 		font-size: 0.75em
+		@media (max-width: 600px)
+			+relative($to: -6em)
+			color: $blue
 
 
 #latestPost
@@ -100,7 +108,12 @@ h1.logo
 		h3
 			font-size: 2em
 			font-weight: 100
-
+		@media (max-width: 600px)
+			+relative($zi: 1)
+			margin-left: 0
+			padding: 1em
+		@media (min-width: 600px)
+			margin-left: 6em
 
 
 
@@ -155,6 +168,16 @@ h1.logo
 
 
 
+.home .contain
+	@media (max-width: 1100px)
+		margin-left: 4em
+	@media (max-width: 450px)
+		margin-left: 0
+		margin-right: 0
+
+
+
+
 section.year
 	clear: both
 	margin-top: 1px
@@ -193,13 +216,14 @@ section.year
 		vertical-align: top
 		&.no
 			background: none
-			border: 1px inset $black
+			border: 1px solid $black
 			color: black !important
-			position: relative
-			width: 1.5em
+			+relative()
+			width: 1.4em
+			height: 1.4em
 			&:before
 				content: ''
-				+absolute($le: 0, $to: 0.6em)
+				+absolute($le: 0, $to: 0.5em)
 				display: block
 				width: 100%
 				height: 1px
@@ -214,7 +238,7 @@ section.year
 
 
 ul.articles li
-	background: adjust-lightness($black, 70%)
+	background: $lightGray
 	padding: 0 1em
 	margin-left: 2em
 	margin-bottom: 1px
