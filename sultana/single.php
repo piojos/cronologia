@@ -14,6 +14,11 @@
 	if( have_posts() ) while( have_posts() ) : the_post(); ?>
 
 <div class="contain">
+	<header>
+		<a href="<?php echo esc_url(home_url('/')); ?>"><small>Cronología del diseño gráfico en Monterrey</small></a>
+	</header>
+
+
 	<article>
 		<?php if(has_post_thumbnail()) the_post_thumbnail(); ?>
 
@@ -102,6 +107,9 @@
 
 	</article>
 
+	<footer>
+		<small class="copy">&copy; <?php the_time('Y'); ?>. Todo el contenido del sitio pertenece a quién se identifica como <em>el autor</em> y/o <em>el editor</em>.</small>
+	</footer>
 </div>
 
 
