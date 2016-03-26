@@ -22,3 +22,60 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+
+
+	<a id="mMenuButton">
+		<div class="icon"></div>
+		<div class="notificationsIcon">4</div>
+	</a>
+
+
+	<a id="addNewPost">
+		<div class="icon"></div>
+	</a>
+
+	<div class="drawer">
+		<div class="contain">
+			<div class="slim left">
+				<nav>
+					<a href="#"><span class="notificationsIcon">4</span>Indice</a>
+					<a href="#">¿Quién está detrás?</a>
+					<a href="#">¿Por qué es importante?</a>
+					<a href="#">Quiero participar</a>
+					<a href="#">Contacto</a>
+				</nav>
+
+				<pre id="indiceManual">
+m. 	Marcas / Proyectos
+p. 	Extractos de periódico
+– 	Contexto
+	<strong class="new">Entrada reciente</strong>
+				</pre>
+			</div>
+			<div class="wide right">
+				<pre>
+Indice
+
+I. 	<a href="#">Prólogo</a>
+II. 	<a href="#">Personajes</a>
+
+1. 	<a href="#">Epígonos</a>
+	<a href="#">1920</a>   <em>m.</em> 	<a href="#">Desiderio Lagrange</a> / <a href="#">Fotograbadores Unidos</a> /
+			<a href="#">Ferrocarriles del norte</a>
+	<a href="#">1922</a>   <em>m.</em>	<a href="#">IMSS</a> / <a href="#"><strong class="new">Coca Cola</strong></a>  / <a href="#">IG Flores</a>
+		   – 	<a href="#">El comienzo del diseño <em>por Oscar Estrada</em></a>
+	<a href="#">1929</a>   <em>m.</em>	<a href="#"><strong class="new">Vitro</strong></a> / <a href="#">Jambé</a>
+	<a href="#">1932</a>   <em>m.</em>	<a href="#">El Tío restaurant</a> / <a href="#">Alaska</a>
+	<a href="#">1920</a>   <em>m.</em>	<a href="#">Coca Cola</a> / <a href="#">Fotograbadores Unidos</a> / <a href="#">Ferrocarriles
+			del norte</a>
+		   – 	<a href="#"><strong class="new">Las colecciones de mi padre por Sonia de Osio</strong></a>
+		   – 	<a href="#">El sueño americano en el Noreste por Oscar Estrada</a>
+
+2. 	<a href="#">Divergentes</a>
+	<a href="#">1920</a>   <em>m.</em> 	<a href="#">Coca Cola</a> / <a href="#">OXXO</a> /
+		   <em>p.</em> 	<a href="#">Las nuevas estaciones <em>fte. El Porvenir</em></a>
+		   – 	<a href="#">El comienzo del diseño <em>por Oscar Estrada</em></a>
+				</pre>
+			</div>
+		</div>
+	</div>

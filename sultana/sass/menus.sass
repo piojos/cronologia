@@ -1,0 +1,123 @@
+
+// Buttons
+
+a#mMenuButton,
+a#addNewPost
+	position: fixed
+	right: 2em
+	cursor: pointer
+
+
+a#mMenuButton
+	color: $black
+	top: 4em
+	z-index: 10
+	.icon
+		width: 2.5em
+		border-top: 1px solid
+		border-bottom: 1px solid
+		&:before
+			content: ''
+			width: 2.5em
+			border-top: 1px solid
+			display: block
+			margin: .75em 0
+	.notificationsIcon
+		+absolute($to: -1em, $le: -1em)
+
+
+.notificationsIcon
+	@extend .sofia
+	font-weight: bold
+	background: $yellow
+	font-size: 0.75em
+	line-height: 1.65em
+	width: 1.75em
+	height: 1.75em
+	+border-radius(50%)
+	text-align: center
+	display: inline-block
+
+
+a#addNewPost
+	width: 2.5em
+	height: 2.5em
+	display: block
+	+border-radius(50%)
+	border: 1px solid
+	color: $black
+	top: 10em
+	z-index: 3
+	.icon
+		border-top: 1px solid
+		width: 1.15em
+		top: 1.15em
+		position: relative
+		margin: 0 auto
+		&:before
+			content: ''
+			border-top: 1px solid
+			width: 1.15em
+			display: block
+			+relative($to: -1px)
+			+rotate(-90deg)
+
+
+
+
+
+
+// Drawer
+
+.drawer
+	background: rgba(255, 255, 255, 0.9)
+	height: 90vh
+	margin-top: 5vh
+	position: fixed
+	width: 100%
+	max-width: 20em
+	right: -102vw
+	z-index: 5
+	+box-shadow(1px 1px 15px 5px rgba(0,0,0,0.1))
+	+single-transition(right, .5s)
+	.contain
+		margin-left: 0
+		margin-right: 6em
+	nav
+		margin-bottom: 2em
+		a
+			display: block
+	a
+		color: $black
+		text-decoration: none
+	.slim
+		width: 100%
+	.wide
+		max-height: 80vh
+		+relative($to: 0)
+		overflow-y: scroll
+
+	.wide, #indiceManual
+		display: none
+
+	&.openMenu
+		right: -5vh
+
+	.notificationsIcon
+		margin-right: .5em
+		+relative($to: -.15em)
+
+
+
+
+
+
+pre#indiceManual
+	font-size: .75em
+
+
+
+
+
+
+// Menu
