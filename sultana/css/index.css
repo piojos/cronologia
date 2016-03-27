@@ -142,13 +142,14 @@ select {
   padding: 0;
   line-height: 1.35em; }
 
-.page header {
+header {
   border-bottom: 1px solid #ececeb;
   margin: 1.55em 0 4em;
   opacity: 0.5; }
-  .page header a {
+  header a {
     text-decoration: none; }
-.page footer {
+
+footer {
   border-top: 1px solid #ececeb;
   margin: 4em 0;
   opacity: 0.5; }
