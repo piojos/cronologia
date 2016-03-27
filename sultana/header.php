@@ -23,47 +23,46 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+		<div class="menuOverlay"></div>
 
-	<a id="mMenuButton">
-		<div class="icon"></div>
-		<div class="notificationsIcon">4</div>
-	</a>
-
-
-	<a id="addNewPost">
-		<div class="icon"></div>
-	</a>
-
-	<div class="drawer">
-		<div class="menu"><?php
-			$post_objects = get_field('menu_links', 'options');
-
-			if( $post_objects ): ?>
-			<nav>
-			<?php foreach( $post_objects as $post_object):
-				$post = get_post($post_object->ID);
-				$slug = $post->post_name;
-					if ($slug == 'indice') : ?>
-					<a href="<?php echo get_permalink($post_object->ID); ?>" class="ajaxMenu indexButton"><span class="notificationsIcon">4</span><?php echo get_the_title($post_object->ID); ?></a><?php 
-					else : ?>
-					<a href="<?php echo get_permalink($post_object->ID); ?>" class="ajaxMenu"><?php echo get_the_title($post_object->ID); ?></a><?php
-					endif; ?>
-			<?php endforeach; ?>
-			</nav>
-			<?php endif;?>
+		<a id="mMenuButton">
+			<div class="icon"></div>
+			<div class="notificationsIcon">4</div>
+		</a>
 
 
-			<pre id="indiceManual">
+		<a id="addNewPost">
+			<div class="icon"></div>
+		</a>
+
+		<div class="drawer">
+			<div class="menu"><?php
+				$post_objects = get_field('menu_links', 'options');
+
+				if( $post_objects ): ?>
+				<nav>
+				<?php foreach( $post_objects as $post_object):
+					$post = get_post($post_object->ID);
+					$slug = $post->post_name;
+						if ($slug == 'indice') : ?>
+						<a href="<?php echo get_permalink($post_object->ID); ?>" class="ajaxMenu indexButton"><span class="notificationsIcon">4</span><?php echo get_the_title($post_object->ID); ?></a><?php
+						else : ?>
+						<a href="<?php echo get_permalink($post_object->ID); ?>" class="ajaxMenu"><?php echo get_the_title($post_object->ID); ?></a><?php
+						endif; ?>
+				<?php endforeach; ?>
+				</nav>
+				<?php endif;?>
+
+
+				<pre id="indiceManual">
 m. 	Marcas / Proyectos
 p. 	Extractos de periódico
 – 	Contexto
 	<strong class="new">Entrada reciente</strong>
-			</pre>
-		</div>
-
-		<div class="contentContainer">
-				<pre>
-Not your content
 				</pre>
+			</div>
+
+			<div class="contentContainer">
+				<p>Not your content</pre>
+			</div>
 		</div>
-	</div>
