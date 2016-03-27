@@ -35,14 +35,23 @@
 	</a>
 
 	<div class="drawer">
-		<div class="menu">
+		<div class="menu"><?php
+			$post_objects = get_field('menu_links', 'options');
+
+			if( $post_objects ): ?>
 			<nav>
-				<a href="http://cronologia.mx/indice/" class="ajaxMenu"><span class="notificationsIcon">4</span>Indice</a>
-				<a href="http://cronologia.mx/quien-esta-detras/" class="ajaxMenu">¿Quién está detrás?</a>
-				<a href="#" class="ajaxMenu">¿Por qué es importante?</a>
-				<a href="#" class="ajaxMenu">Quiero participar</a>
-				<a href="#" class="ajaxMenu">Contacto</a>
+			<?php foreach( $post_objects as $post_object):
+				$post = get_post($post_object->ID);
+				$slug = $post->post_name;
+					if ($slug == 'indice') : ?>
+					<a href="<?php echo get_permalink($post_object->ID); ?>" class="ajaxMenu indexButton"><span class="notificationsIcon">4</span><?php echo get_the_title($post_object->ID); ?></a><?php 
+					else : ?>
+					<a href="<?php echo get_permalink($post_object->ID); ?>" class="ajaxMenu"><?php echo get_the_title($post_object->ID); ?></a><?php
+					endif; ?>
+			<?php endforeach; ?>
 			</nav>
+			<?php endif;?>
+
 
 			<pre id="indiceManual">
 m. 	Marcas / Proyectos
