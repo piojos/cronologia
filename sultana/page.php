@@ -34,6 +34,10 @@
 					<?php the_content(); ?>
 				</div><?php
 
+		elseif(is_page('indice')) :
+
+			the_content();
+
 		else : ?>
 
 			<div class="twoColumns">
