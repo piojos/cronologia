@@ -22,12 +22,14 @@
 
 	$('a.ajaxMenu').click(function(e){
 		$('.drawer').animate(drawerEnlarge,'slow').addClass('openContent');
+		$('#indiceManual').fadeOut();
 
 		e.preventDefault();
 		var link = $(this).attr('href');
 		$('.drawer .contentContainer').replaceWith('<div class="contentContainer">Cargando</div>');
 		if ($(this).hasClass('indexButton')) {
 			$('.drawer .contentContainer').load(link+' article .content');
+			$('#indiceManual').fadeIn();
 		} else {
 			$('.drawer .contentContainer').load(link+' article');
 		}
