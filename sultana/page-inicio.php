@@ -130,8 +130,13 @@ endwhile; // PAGE: Inicio Loop ?>
 						echo '<section class="year latest"><div class="number">Nuevo</div><ul class="projects">';
 					}
 					// echo '<section class="year latest"><div class="number">Latest</div><ul class="projects">';
-				} elseif($annoNuevo == $anno) {} else {
-					echo '</section><section class="year"><div class="number">'.$annoNuevo.'</div><ul class="projects">';
+				} elseif($annoNuevo == $anno) {} else { ?>
+					</section>
+					<section class="year">
+						<div class="period"><span><?php echo $annoNuevo; ?></span></div>
+						<hr>
+						<div class="contentContainer">
+						<ul class="articles"><?php
 				}
 
 				$cat = get_the_category(); ?>
@@ -140,7 +145,7 @@ endwhile; // PAGE: Inicio Loop ?>
 				<li<?php if (in_category('2')) echo ' class="article"'; ?>>
 					<a href="<?php the_permalink(); ?>" class="sofia"><?php
 
-					echo $annoNuevo.': ';
+					// echo $annoNuevo.': ';
 					// Tester
 					// if($anno == '') {
 					// 	echo '<span>Nuevo</span>';
@@ -167,6 +172,6 @@ endwhile; // PAGE: Inicio Loop ?>
 
 		endif; ?>
 
-</div><?php // #timeline
+</div><?php // END #timeline
 
 	get_footer(); ?>
