@@ -136,26 +136,18 @@ endwhile; // PAGE: Inicio Loop ?>
 						<div class="period"><span><?php echo $annoNuevo; ?></span></div>
 						<hr>
 						<div class="contentContainer">
-						<ul class="articles"><?php
+						<ul class="projects"><?php
 				}
 
 				$cat = get_the_category(); ?>
 
 
 				<li<?php if (in_category('2')) echo ' class="article"'; ?>>
-					<a href="<?php the_permalink(); ?>" class="sofia"><?php
-
-					// echo $annoNuevo.': ';
-					// Tester
-					// if($anno == '') {
-					// 	echo '<span>Nuevo</span>';
-					// } elseif($annoNuevo == $anno) {
-					// 	echo '<span>Mismo</span>';
-					// } else {
-					// 	echo '<span>Otro</span>';
-					// }
-
-					the_title(); ?></a>
+					<a href="<?php the_permalink(); ?>" class="sofia">
+						<?php the_title();
+						if (in_category('2')) {
+							echo ' <em class="kepler">por '.get_the_author().'</em>';
+						} ?></a>
 				</li><?php
 
 
