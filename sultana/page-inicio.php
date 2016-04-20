@@ -10,12 +10,21 @@
 	while ( have_posts() ) : the_post();
 	// Get posts for Timeline
 
-	$posts = get_posts(array(
+	$postsLoop = get_posts(array(
 		'posts_per_page'	=> -1,
 		'meta_key'			=> 'year',
 		'orderby'			=> 'meta_value_num',
-		'order'				=> 'ASC'
+		'order'				=> 'ASC',
+		'cat'				=> '-7'
 	));
+
+	// $chaptersLoop = get_posts(array(
+	// 	'posts_per_page'	=> -1,
+	// 	'meta_key'			=> 'year',
+	// 	'orderby'			=> 'meta_value_num',
+	// 	'order'				=> 'ASC',
+	// 	'cat'				=> '7'
+	// ));
 
 	endwhile; ?>
 
@@ -26,87 +35,20 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="timeline"><?php
-	if( $posts ):
-		foreach( $posts as $post ):
-			setup_postdata( $post );
-
-			$annoNuevo = get_field('year');
-
-
-// NEW YEAR
-			if($annoNuevo == $anno) {} else {
-
-
-				if($anno != '') {
-					if($isChapter) {
-					$isChapter = FALSE; ?>
-		</div><?php
-					} else { ?>
-			</ul>
-		</div><?php
-					} ?>
-
-	</section><?php
-				}
-
-
-				if(in_category('7')) { ?>
-
-	<section id="newChapter">
+<?php /*
+	<section class="newChapter">
 		<div class="period range">
 			<span><?php echo $annoNuevo ?><br>-<br>N/A</span>
 			<button class="close">×</button>
 		</div>
 		<hr>
-		<div class="title"><?php
-
-				} else { ?>
-
-	<section class="year">
-		<div class="period">
-			<span><?php echo $annoNuevo ?></span>
-		</div>
-		<hr>
-		<div class="contentContainer">
-			<ul class="articles"></ul>
-			<ul class="projects"><?php
-				}
-
-
-
-			} // END if new year
-
-
-
-// Actual LOOP
-			if(in_category('7')) { ?>
-
+		<div class="title">
 			<div class="contain <?php if($annoNuevo == $anno) echo 'trappedChapter'; ?>">
-				<div class="wide left sofia">
+				<div class="wide left sophia">
 					<h2><?php the_title(); ?></h2>
 					<p class="author">Por Oscar Estrada</p>
 				</div>
-				<div class="slim right sofia">
+				<div class="slim right sophia">
 					<p>Poco antes de 1900 a 1950.</p>
 				</div>
 
@@ -127,17 +69,59 @@
 					</div>
 				</article>
 			</div>
-<?php
-				if($annoNuevo == $anno) {
-				}
-				$isChapter = TRUE;
-			} elseif(($annoNuevo != $anno) OR ($annoNuevo == $anno)) { ?>
+		</div>
+	</section> */ ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="timeline"><?php
+	if( $postsLoop ):
+		foreach( $postsLoop as $post ):
+			setup_postdata( $post );
+
+			$annoNuevo = get_field('year');
+
+
+// NEW YEAR
+			if($annoNuevo == $anno) {} else {
+
+
+				if($anno != '') { ?>
+			</ul>
+		</div>
+	</section><?php
+				} ?>
+
+	<section class="year" id="<?php echo $annoNuevo ?>">
+		<div class="period">
+			<span><?php echo $annoNuevo ?></span>
+		</div>
+		<hr>
+		<div class="contentContainer">
+			<ul class="articles"></ul>
+			<ul class="projects"><?php
+
+
+			} // END if new year
+
+
+// Actual LOOP
+			if(($annoNuevo != $anno) OR ($annoNuevo == $anno)) { ?>
 
 				<li<?php if (in_category('2')) echo ' class="article"'; ?>>
-					<a href="<?php the_permalink(); ?>" class="sofia"><?php
-						if(in_category('7')) {
-							echo '🍕: ';
-						}
+					<a href="<?php the_permalink(); ?>" class="sophia"><?php
 						the_title();
 						if (in_category('2')) {
 							echo ' <em class="kepler">por '.get_the_author().'</em>';
@@ -156,8 +140,9 @@
 			</ul>
 		</div>
 	</section>
-</div>
 
-<?php // END #timeline
+</div>	<!-- END #timeline -->
+
+<?php
 
 	get_footer(); ?>
