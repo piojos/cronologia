@@ -26,7 +26,94 @@
 		'cat'				=> '7'
 	));
 
-	endwhile; ?>
+
+
+
+
+
+
+
+
+
+		/*  INTRO  */
+
+		$introAbout = get_field('intro_about');
+
+		?>
+		<section id="mainTitle">
+
+			<div id="Francesca" class="detailLine top"></div>
+
+			<div class="contain">
+				<div class="slim left">
+					<h1 class="logo">
+						Cronología
+						<span>del</span>
+						diseño gráfico
+						<span>en</span>
+						Monterrey
+					</h1>
+				</div><?php
+
+			if($introAbout) { ?>
+				<div id="timelineAbout" class="slim left">
+					<?php echo $introAbout; ?>
+				</div><?php
+			} ?>
+
+			</div>
+
+		</section><?php
+
+
+
+
+
+
+
+
+		/*  PROLOGUE  */
+
+		$prologueToggle = get_field('has_prologue');
+		$prologueQuery = new WP_Query( 'post_type=page&pagename=prologo' );
+
+		if($prologueToggle) :
+			while ( $prologueQuery->have_posts() ) :
+				$prologueQuery->the_post(); ?>
+			<section id="prologue">
+
+				<div class="detailLine"></div>
+
+				<div class="contain">
+					<div class="smallLogo">
+						O I O
+					</div><?php
+
+					$ftdCaption = get_post(get_post_thumbnail_id())->post_excerpt;
+					echo '<div class="slim left sofia">'.$ftdCaption.'</div>'; ?>
+
+					<div class="wide right sofia" style="margin-bottom:6em"><?php
+						if($rTitle) {
+							echo $rTitle;
+						} else {
+							the_title();
+						} ?>
+					</div>
+
+					<article><?php
+
+						get_template_part('inc/block-content'); ?>
+
+					</article>
+				</div>
+
+			</section><?php
+			endwhile;
+			wp_reset_postdata();
+		endif;
+
+	endwhile; // PAGE: Inicio Loop ?>
+
 
 
 
