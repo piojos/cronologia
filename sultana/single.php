@@ -30,7 +30,7 @@
 
 			<div class="right wide">
 				<h1><?php the_title(); ?></h1>
-				<?php if($creator) echo '<p class="studio sofia">'.$creator.'</p>'; ?>
+				<?php if($creator) echo '<p class="studio sophia">'.$creator.'</p>'; ?>
 				<p class="author">Contenido por <?php the_author_posts_link(); ?> el <?php the_time('l j \d\e F \d\e Y'); ?>.</p>
 			</div>
 
@@ -39,7 +39,7 @@
 
 		<div class="content"><?php
 
-			if($month OR $year) echo '<div class="left project_date sofia slim"><p>';
+			if($month OR $year) echo '<div class="left project_date sophia slim"><p>';
 			if($month) echo $month;
 			if($year) echo ' <strong>'.$year.'</strong>';
 			if($month OR $year) echo '</p></div>';
