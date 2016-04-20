@@ -53,7 +53,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .kepler, body, input, textarea {
   font-family: "kepler-std-subhead", serif; }
 
-.sofia, article h1, h2, h3, .button, a.comment-reply-link, .add-comment input[type="submit"], .label, .logged-in-as, .comment-notes, label, .notificationsIcon, .smallLogo, .newPostLine, section.year a.comments, .comment-author, .comment-meta {
+.sophia, article h1, h2, h3, .button, a.comment-reply-link, .add-comment input[type="submit"], .label, .logged-in-as, .comment-notes, label, .notificationsIcon, .smallLogo, .newPostLine, section.year a.comments, .comment-author, .comment-meta {
   font-family: "sofia-pro", sans-serif; }
 
 body {
@@ -532,25 +532,25 @@ h1.logo {
   position: absolute;
   z-index: -1; }
 
-#newChapter {
+section.newChapter {
   overflow: auto; }
-  #newChapter .title {
+  section.newChapter .title {
     background: #3B3B37;
     color: white;
     float: left;
     width: 85%; }
-    #newChapter .title .contain {
+    section.newChapter .title .contain {
       margin-left: 0; }
-  #newChapter h2 {
+  section.newChapter h2 {
     font-size: 2em; }
-  #newChapter article {
+  section.newChapter article {
     margin-top: 8em; }
-    #newChapter article p {
+    section.newChapter article p {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale; }
-  #newChapter a {
+  section.newChapter a {
     color: #95bef5; }
-  #newChapter p {
+  section.newChapter p {
     opacity: 0.8; }
 
 @media (max-width: 1100px) {
