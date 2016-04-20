@@ -67,3 +67,17 @@
 			$('.drawer, body, a#mMenuButton').removeClass('openMenu');
 		}
 	});
+
+
+
+
+
+
+
+
+	// Rearrange timeline
+	$( document ).ready(function() {
+		$('section.year').each(function() {
+		  $( this ).find('li.article').appendTo($(this).find('ul.articles'));
+		});
+	});
