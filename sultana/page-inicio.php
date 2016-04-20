@@ -7,9 +7,7 @@
 	get_header();
 
 
-	while ( have_posts() ) : the_post();
 	// Get posts for Timeline
-
 	$postsLoop = get_posts(array(
 		'posts_per_page'	=> -1,
 		'meta_key'			=> 'year',
@@ -27,6 +25,7 @@
 	));
 
 
+	while ( have_posts() ) : the_post();
 
 
 
@@ -35,7 +34,8 @@
 
 
 
-		/*  INTRO  */
+
+	/*  INTRO  */
 
 		$introAbout = get_field('intro_about');
 
@@ -124,6 +124,25 @@
 
 
 <div id="timeline"><?php
+
+
+/*
+
+<section id="latestPost">
+	<div class="newPostLine"><span>Nuevo</span></div>
+
+	<div class="contain">
+		<a href="http://cronologia.mx/los-pioneros/" class="sofia project">
+			<h3>Los Pioneros</h3>
+			<p class="kepler">1900 por <span>Autor Apellido</span></p>
+		</a>
+	</div>
+</section>
+
+*/
+
+
+
 
 	if( $chaptersLoop ):
 		foreach( $chaptersLoop as $post ):
@@ -218,6 +237,14 @@
 						if (in_category('2')) {
 							echo ' <em class="kepler">por '.get_the_author().'</em>';
 						} ?></a>
+						<?php
+/*
+
+						<a href="../#comments" class="comments">1</a>
+						<a href="../#comments" class="no comments"></a>
+
+*/
+						?>
 				</li>
 <?php
 			}
