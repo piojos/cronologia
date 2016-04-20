@@ -18,13 +18,13 @@
 		'cat'				=> '-7'
 	));
 
-	// $chaptersLoop = get_posts(array(
-	// 	'posts_per_page'	=> -1,
-	// 	'meta_key'			=> 'year',
-	// 	'orderby'			=> 'meta_value_num',
-	// 	'order'				=> 'ASC',
-	// 	'cat'				=> '7'
-	// ));
+	$chaptersLoop = get_posts(array(
+		'posts_per_page'	=> -1,
+		'meta_key'			=> 'year',
+		'orderby'			=> 'meta_value_num',
+		'order'				=> 'ASC',
+		'cat'				=> '7'
+	));
 
 	endwhile; ?>
 
@@ -35,18 +35,23 @@
 
 
 
-<?php /*
+
+<div id="timeline"><?php
+
+	if( $chaptersLoop ):
+		foreach( $chaptersLoop as $post ):
+			setup_postdata( $post ); ?>
 	<section class="newChapter">
 		<div class="period range">
-			<span><?php echo $annoNuevo ?><br>-<br>N/A</span>
+			<span><?php the_field('year'); ?><br>-<br>N/A</span>
 			<button class="close">×</button>
 		</div>
 		<hr>
 		<div class="title">
-			<div class="contain <?php if($annoNuevo == $anno) echo 'trappedChapter'; ?>">
+			<div class="contain">
 				<div class="wide left sophia">
 					<h2><?php the_title(); ?></h2>
-					<p class="author">Por Oscar Estrada</p>
+					<p class="author">Por <?php the_author(); ?></p>
 				</div>
 				<div class="slim right sophia">
 					<p>Poco antes de 1900 a 1950.</p>
@@ -70,7 +75,11 @@
 				</article>
 			</div>
 		</div>
-	</section> */ ?>
+	</section>
+		<?php
+		endforeach;
+		wp_reset_postdata();
+	endif;
 
 
 
@@ -79,14 +88,10 @@
 
 
 
+	/*
+	 *	Posts Loop
+	 */
 
-
-
-
-
-
-
-<div id="timeline"><?php
 	if( $postsLoop ):
 		foreach( $postsLoop as $post ):
 			setup_postdata( $post );
@@ -117,7 +122,7 @@
 			} // END if new year
 
 
-// Actual LOOP
+			// Actual LOOP
 			if(($annoNuevo != $anno) OR ($annoNuevo == $anno)) { ?>
 
 				<li<?php if (in_category('2')) echo ' class="article"'; ?>>
