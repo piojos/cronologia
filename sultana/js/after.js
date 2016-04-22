@@ -76,8 +76,20 @@
 
 
 	// Rearrange timeline
+
 	$( document ).ready(function() {
+
+
+		// Articles
 		$('section.year').each(function() {
-		  $( this ).find('li.article').appendTo($(this).find('ul.articles'));
+			$( this ).find('li.article').appendTo($(this).find('ul.articles'));
+		});
+
+
+		// Chapters
+		$('section.newChapter').each(function() {
+			var chId = $(this).attr('id');
+			var noCh = chId.replace('ch', '');
+			$(this).insertBefore('section#' + noCh + '.year');
 		});
 	});

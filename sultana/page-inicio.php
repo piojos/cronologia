@@ -147,7 +147,7 @@
 	if( $chaptersLoop ):
 		foreach( $chaptersLoop as $post ):
 			setup_postdata( $post ); ?>
-	<section class="newChapter">
+	<section class="newChapter" id="ch<?php the_field('year'); ?>">
 		<div class="period range">
 			<span><?php the_field('year'); ?><br>-<br>N/A</span>
 			<button class="close">×</button>
@@ -160,7 +160,7 @@
 					<p class="author">Por <?php the_author(); ?></p>
 				</div>
 				<div class="slim right sophia">
-					<p>Poco antes de 1900 a 1950.</p>
+					<p><a href="<?php the_permalink(); ?>">Poco antes de 1900 a 1950.</a></p>
 				</div>
 
 				<article class="show">
