@@ -58,7 +58,7 @@ body
 	line-height: 2em
 	color: $black
 
-article h1, h2, h3
+article h1, h2, h3, blockquote
 	@extend .sophia
 	font-style: normal
 	font-weight: 900
@@ -66,13 +66,19 @@ article h1, h2, h3
 h1
 	font-size: 2em
 
-h2, h3
+h2, h3, blockquote
 	font-size: 1.25em
 
 a
 	color: $blue
 	&:hover
 		opacity: .75
+
+.image a:hover
+	opacity: 1
+
+blockquote
+	text-align: center
 
 strong
 	font-weight: 600

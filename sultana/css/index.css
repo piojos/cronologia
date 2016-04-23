@@ -53,7 +53,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .kepler, body, input, textarea {
   font-family: "kepler-std-subhead", serif; }
 
-.sophia, article h1, h2, h3, .button, a.comment-reply-link, .add-comment input[type="submit"], .label, .logged-in-as, .comment-notes, label, .notificationsIcon, .smallLogo, .newPostLine, section.year a.comments, .comment-author, .comment-meta {
+.sophia, article h1, h2, h3, blockquote, .button, a.comment-reply-link, .add-comment input[type="submit"], .label, .logged-in-as, .comment-notes, label, .notificationsIcon, .smallLogo, .newPostLine, section.year a.comments, .comment-author, .comment-meta {
   font-family: "sofia-pro", sans-serif; }
 
 body {
@@ -61,20 +61,26 @@ body {
   line-height: 2em;
   color: #3B3B37; }
 
-article h1, h2, h3 {
+article h1, h2, h3, blockquote {
   font-style: normal;
   font-weight: 900; }
 
 h1 {
   font-size: 2em; }
 
-h2, h3 {
+h2, h3, blockquote {
   font-size: 1.25em; }
 
 a {
   color: #2076EA; }
   a:hover {
     opacity: 0.75; }
+
+.image a:hover {
+  opacity: 1; }
+
+blockquote {
+  text-align: center; }
 
 strong {
   font-weight: 600; }
@@ -458,6 +464,8 @@ h1.logo {
 
 #prologue {
   background: #FBF5EA; }
+  #prologue .contain .left {
+    min-height: 1em; }
 
 .smallLogo {
   position: absolute;

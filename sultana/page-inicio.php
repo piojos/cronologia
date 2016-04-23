@@ -79,7 +79,8 @@
 
 		if($prologueToggle) :
 			while ( $prologueQuery->have_posts() ) :
-				$prologueQuery->the_post(); ?>
+				$prologueQuery->the_post();
+				$rTitle = get_field('real_title'); ?>
 			<section id="prologue">
 
 				<div class="detailLine"></div>
@@ -87,12 +88,9 @@
 				<div class="contain">
 					<div class="smallLogo">
 						O I O
-					</div><?php
-
-					$ftdCaption = get_post(get_post_thumbnail_id())->post_excerpt;
-					echo '<div class="slim left sofia">'.$ftdCaption.'</div>'; ?>
-
-					<div class="wide right sofia" style="margin-bottom:6em"><?php
+					</div>
+					<div class="slim left sophia"><?php the_field('kicker') ?></div>
+					<div class="wide right sophia" style="margin-bottom:6em"><?php
 						if($rTitle) {
 							echo $rTitle;
 						} else {
@@ -123,21 +121,21 @@
 
 
 
-<div id="timeline"><?php
-
-
-/*
-
+<div id="timeline">
 <section id="latestPost">
 	<div class="newPostLine"><span>Nuevo</span></div>
 
 	<div class="contain">
-		<a href="http://cronologia.mx/los-pioneros/" class="sofia project">
+		<a href="http://cronologia.mx/los-pioneros/" class="sophia project">
 			<h3>Los Pioneros</h3>
 			<p class="kepler">1900 por <span>Autor Apellido</span></p>
 		</a>
 	</div>
-</section>
+</section><?php
+
+
+/*
+
 
 */
 
@@ -164,20 +162,7 @@
 				</div>
 
 				<article class="show">
-					<div class="wide left">
-						<p>Steven Heller es uno de los mejores escritores dedicados al diseño gráfico que conozco, su aportación al conocimiento general que rodea la gráfica global es incomparable y punto de referencia para millones de diseñadores, incluyéndome.</p>
-
-						<p>Todos los días envía un newsletter de parte de su sección especial de Print Magazine que se llama <a href="http://www.printmag.com/daily-heller/" target="_blank">‘The Daily Heller’</a> de la cual se tienen que inscribir en este momento si les interesa saber más sobre las raíces históricas del diseño gráfico mundial.</p>
-
-						<p>Steven Heller es uno de los mejores escritores dedicados al diseño gráfico que conozco, su aportación al conocimiento general que rodea la gráfica global es incomparable y punto de referencia para millones de diseñadores, incluyéndome.</p>
-					</div>
-					<div class="slim right">
-						<a herf="http://cronologia.mx/wp-content/uploads/2015/11/Screen-Shot-2015-06-05-at-10.20.43.png" target="_blank">
-							<img src="http://cronologia.mx/wp-content/uploads/2015/11/Screen-Shot-2015-06-05-at-10.20.43-300x169.png" alt="pulpo rosa en fondo azul">
-						</a>
-						<p class="caption">Se me hace importante destacar que nada hacia el noroeste.</p>
-
-					</div>
+					<?php get_template_part('inc/block', 'content'); ?>
 				</article>
 			</div>
 		</div>
@@ -237,11 +222,11 @@
 						if (in_category('2')) {
 							echo ' <em class="kepler">por '.get_the_author().'</em>';
 						} ?></a>
+						<a href="../#comments" class="no comments"></a>
 						<?php
 /*
 
 						<a href="../#comments" class="comments">1</a>
-						<a href="../#comments" class="no comments"></a>
 
 */
 						?>
