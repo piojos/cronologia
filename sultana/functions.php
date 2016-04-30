@@ -4,7 +4,17 @@
 	// 	Theme Supports
 
 	add_theme_support( 'post-thumbnails' );
+	function remove_customize_page(){
+		global $submenu;
+		unset($submenu['themes.php'][6]); // remove customize link
+	}
+	add_action( 'admin_menu', 'remove_customize_page');
 
+	function wpse200296_before_admin_bar_render(){
+		global $wp_admin_bar;
+		$wp_admin_bar->remove_menu('customize');
+	}
+	add_action( 'wp_before_admin_bar_render', 'wpse200296_before_admin_bar_render' ); 
 
 
 
