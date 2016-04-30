@@ -10,7 +10,7 @@ if ( post_password_required() ) {
 	return;
 } ?>
 
-<div class="comments">
+<div id="comentarios" class="comments">
 	 <div class="slim left" style="margin-top: 1em">
 		 <h3>Comentarios</h3>
 		 <p class="caption">Todos los comentarios son moderados para servir como una aportación relevante al
