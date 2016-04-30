@@ -20,7 +20,7 @@ while (have_rows('content_blocks')) {
 		</div><?php
 	} ?>
 
-	<div class="<?php echo $oneClass; if($images) echo 'image '; ?>"><?php
+	<div class="<?php echo $oneClass; if($images) echo 'images '; ?>"><?php
 		if($images) : ?>
 
 			<ul><?php

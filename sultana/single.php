@@ -42,7 +42,7 @@
 			if($month OR $year) echo '<div class="left project_date sophia slim"><p>';
 			if($month) echo $month;
 			if($year) echo ' <strong>'.$year.'</strong>';
-			if($month OR $year) echo '</p></div>';
+			if($month OR $year) echo '</p></div><div class="right wide" style="min-height:2em"></div>';
 
 
 			get_template_part('inc/block-content');

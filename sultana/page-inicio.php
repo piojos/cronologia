@@ -155,10 +155,13 @@
 			<div class="contain">
 				<div class="wide left sophia">
 					<h2><?php the_title(); ?></h2>
-					<p class="author">Por <?php the_author(); ?></p>
+					<p class="author">Por <?php
+					$creator = get_field('creator');
+					if($creator){ echo $creator; }
+					else { the_author(); } ?></p>
 				</div>
 				<div class="slim right sophia">
-					<p><a href="<?php the_permalink(); ?>">Poco antes de 1900 a 1950.</a></p>
+					<p><?php the_field('kicker'); ?></p>
 				</div>
 
 				<article class="show">
@@ -220,16 +223,17 @@
 					<a href="<?php the_permalink(); ?>" class="sophia"><?php
 						the_title();
 						if (in_category('2')) {
-							echo ' <em class="kepler">por '.get_the_author().'</em>';
+							echo ' <em class="kepler">por ';
+							$creator = get_field('creator');
+							if($creator){ echo $creator; }
+							else { the_author(); }
+							echo '</em>';
 						} ?></a>
-						<a href="../#comments" class="no comments"></a>
 						<?php
-/*
 
-						<a href="../#comments" class="comments">1</a>
-
-*/
-						?>
+						if(!(in_category('2'))) { ?>
+						<a href="<?php the_permalink(); ?>#comentarios" class="<?php if(get_comments_number('0','%','%') == 0) echo 'no '; ?>comments"><?php comments_number('','%','%'); ?></a><?php
+						} ?>
 				</li>
 <?php
 			}
